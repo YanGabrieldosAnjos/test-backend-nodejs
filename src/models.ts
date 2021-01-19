@@ -20,4 +20,18 @@ export interface IUser extends Document {
   password: string;
 }
 
+export interface ICategory extends Document {
+  name: string;
+  description: string;
+}
+
+export interface IProduct extends Document {
+  title: string;
+  description: string;
+  price: number;
+  category: ICategory;
+}
+
 export const userModel = conn.model<IUser>("users", s.userSchema);
+export const categoryModel = conn.model<ICategory>("categories", s.categorySchema)
+export const productModel = conn.model<IProduct>("products", s.productSchema)

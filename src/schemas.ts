@@ -17,3 +17,33 @@ export const userSchema = new Schema(
   },
   { collection: "users", versionKey: false }
 );
+
+export const categorySchema = new Schema(
+  {
+    _id: ObjectId,
+    name: {
+      type: String,
+      unique: true,
+    },
+    description: String
+  },
+  { collection: "categories", versionKey: false }
+);
+
+export const productSchema = new Schema(
+  {
+    _id: ObjectId,
+    name: {
+      type: String,
+      unique: true,
+    },
+    description: String,
+    price: Number,
+    category: {
+      type: ObjectId,
+      ref: "categories",
+
+    },
+  },
+  {collection: "products", versionKey: false}
+)
