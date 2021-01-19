@@ -39,11 +39,11 @@ export const productSchema = new Schema(
     },
     description: String,
     price: Number,
-    category: {
+    categories: [{
       type: ObjectId,
       ref: "categories",
 
-    },
+    }],
   },
   {collection: "products", versionKey: false}
 )

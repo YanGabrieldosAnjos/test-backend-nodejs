@@ -29,7 +29,7 @@ export interface IProduct extends Document {
   title: string;
   description: string;
   price: number;
-  category: ICategory;
+  categories: Array<ICategory>;
 }
 
 export const userModel = conn.model<IUser>("users", s.userSchema);
