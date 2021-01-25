@@ -1,6 +1,5 @@
 import { Router, Request, Response } from "express";
 import { INewCategory, CategoryController } from "../controllers/category";
-import * as jwt from "jsonwebtoken";
 import { verifyJWT } from "../middlewares/auth";
 import { ICategory } from "../models";
 const router = Router();
